@@ -122,10 +122,12 @@ Bedieningspaneel.
 ## Breakdownschets, Week 1
 
 <details>
-<summary>uitwerken na afloop 2e werkgroep</summary>
+<summary>Breakdownschets</summary>
+
+Uploaden vanuit schetsboek ..
 
 ### De hele pagina: 
-<img src="" width="375px" alt="">
+<img src="docs/assets/images/inspo9.jpg" width="375px" alt="">
 
 ### dynamisch deel (bijv menu): 
 <img src="" width="375px" alt="">
@@ -145,7 +147,10 @@ Bedieningspaneel.
 <summary>Voortgang 1, week 2</summary>
 
 ### Stand van zaken
+
+<img src="docs/assets/images/svz1.png" width="375px" alt="">
  
+
 
 
 

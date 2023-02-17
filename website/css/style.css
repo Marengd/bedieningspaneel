@@ -1,0 +1,196 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+
+ *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+   all: unset;
+   display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+   cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+   list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+   max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+   border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+   -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+   white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+   -webkit-appearance: revert;
+   appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+   color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+  display:revert; revert to element instead of attribute */
+:where([hidden]) {
+   display: none;
+}
+
+/* revert for bug in Chromium browsers
+  - fix for the content editable attribute will work properly.
+  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+   -moz-user-modify: read-write;
+   -webkit-user-modify: read-write;
+   overflow-wrap: break-word;
+   -webkit-line-break: after-white-space;
+   -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+   -webkit-user-drag: element;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*********************/
+/* Custom Properties */
+/*********************/
+
+:root {
+   --main-background-color: #fffeed;
+
+   --background-mountain-color: #fefbc8;
+
+   --background-rails-color: #ffd874;
+   --background-rails-stroke-width: 5px;
+
+   --looping-rails-color: #df4972;
+   --looping-standard-color: #a93b54;
+
+   --black: #000000;
+}
+
+
+
+
+
+
+html, body {
+   height: 100%;
+}
+
+body {
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   background-color: var(--black);
+}
+
+
+/* **** */
+/* Main */
+/* **** */
+
+main {
+   position: relative;
+
+   width: 50rem;
+   height: 37.5rem;
+
+   background-color: var(--main-background-color);
+}
+
+
+/* ************* */
+/* Main Sections */
+/* ************* */
+
+main > section {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+}
+
+
+/* ********************** */
+/* Section With Mountains */
+/* ********************** */
+
+main > section:nth-child(1) {
+   /* background-color: pink; */
+}
+
+main > section:nth-child(1) figure svg {
+   fill: var(--background-mountain-color);
+}
+
+/* ******************************* */
+/* Section With Rollercoaster Rail */
+/* ******************************* */
+
+main > section:nth-child(2) {
+   /* background-color: yellow; */
+}
+
+main > section:nth-child(2) figure svg {
+   fill: none;
+
+   stroke: var(--background-rails-color);
+   stroke-width: var(--background-rails-stroke-width);
+}
+
+/* ******************** */
+/* Section With Looping */
+/* ******************** */
+
+main > section:nth-child(3) {
+   /* background-color: blue; */
+}
+
+

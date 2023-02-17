@@ -90,15 +90,31 @@ Bedieningspaneel
 ## Mijn plan
 
 <details>
-<summary></summary>
+<summary>Mijn plan</summary>
 
 ### Je opdracht:
 Bedieningspaneel.
 
 #### Inspiratie: 
  
-<img src="" width="375px" alt="">
- 
+<img src="docs/assets/images/inspo1.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo2.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo3.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo4.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo5.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo6.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo7.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo8.jpg" width="375px" alt="">
+
+<img src="docs/assets/images/inspo9.jpg" width="375px" alt="">
+   
 </details>
 
 

@@ -1,196 +1,436 @@
-/***
-    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
-
 /*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-
- *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-   all: unset;
-   display: revert;
-}
-
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
    box-sizing: border-box;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-   cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-   list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-   max-width: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-   border-collapse: collapse;
-}
-
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
-   -webkit-user-select: auto;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-   white-space: revert;
-}
-
-/* minimum style to allow to style meter element */
-meter {
-   -webkit-appearance: revert;
-   appearance: revert;
-}
-
-/* reset default text opacity of input placeholder */
-::placeholder {
-   color: unset;
-}
-
-/* fix the feature of 'hidden' attribute.
-  display:revert; revert to element instead of attribute */
-:where([hidden]) {
-   display: none;
-}
-
-/* revert for bug in Chromium browsers
-  - fix for the content editable attribute will work properly.
-  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable="false"])) {
-   -moz-user-modify: read-write;
-   -webkit-user-modify: read-write;
-   overflow-wrap: break-word;
-   -webkit-line-break: after-white-space;
-   -webkit-user-select: auto;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-   -webkit-user-drag: element;
-}
-
-
-
-
-
-
-
-
-
-
-
-/*********************/
-/* Custom Properties */
-/*********************/
-
-:root {
-   --main-background-color: #fffeed;
-
-   --background-mountain-color: #fefbc8;
-
-   --background-rails-color: #ffd874;
-   --background-rails-stroke-width: 5px;
-
-   --looping-rails-color: #df4972;
-   --looping-standard-color: #a93b54;
-
-   --black: #000000;
-}
-
-
-
-
-
-
-html, body {
+ }
+ /*
+   2. Remove default margin
+ */
+ * {
+   margin: 0;
+ }
+ /*
+   3. Allow percentage-based heights in the application
+ */
+ html, body {
    height: 100%;
+ }
+ /*
+   Typographic tweaks!
+   4. Add accessible line-height
+   5. Improve text rendering
+ */
+ body {
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+ }
+ /*
+   6. Improve media defaults
+ */
+ img, picture, video, canvas, svg {
+   display: block;
+   max-width: 100%;
+ }
+ /*
+   7. Remove built-in form typography styles
+ */
+ input, button, textarea, select {
+   font: inherit;
+ }
+ /*
+   8. Avoid text overflows
+ */
+ p, h1, h2, h3, h4, h5, h6 {
+   overflow-wrap: break-word;
+ }
+ /*
+   9. Create a root stacking context
+ */
+ #root, #__next {
+   isolation: isolate;
+ }
+
+
+
+
+ :root {
+
+   /* Rollercoaster */
+   --rollercoaster-base-color: #a93b56;
+   --rollercoaster-looping-color: #d65275;
+
+   /* Rollercoaster Cart */
+   --rollercoaster-cart-wheel-color: #8f494a;
+   --rollercoaster-cart-primary-color: #f57d14;
+   --rollercoaster-cart-accent-color: #fdaf77;
+   --rollercoaster-cart-detail-color: #ffffff;
+
+   /* Environment */
+   --environment-mountains-color: #fbfac9;
+   --environment-rollercoaster-track-color: #f8d575;
+   --environment-color: #fbfac9;
+ }
+
+
+ body {
+   background-color: white;
+ }
+
+ body:has(#achtbaan:checked) main section > div:nth-child(1) > div {
+   animation-play-state: running;
+ }
+
+form {
+   z-index: 99;
+   position: relative;
 }
-
-body {
-   display: flex;
-
-   align-items: center;
-   justify-content: center;
-
-   background-color: var(--black);
-}
-
-
-/* **** */
-/* Main */
-/* **** */
 
 main {
    position: relative;
-
-   width: 50rem;
-   height: 37.5rem;
-
-   background-color: var(--main-background-color);
-}
-
-
-/* ************* */
-/* Main Sections */
-/* ************* */
-
-main > section {
-   position: absolute;
-
-   inset: 0;
 
    width: 100%;
    height: 100%;
 }
 
 
-/* ********************** */
-/* Section With Mountains */
-/* ********************** */
+/* ************* */
+/* Rollercoaster */
+/* ************* */
 
-main > section:nth-child(1) {
-   /* background-color: pink; */
+main section {
+   z-index: 99;
+
+   position: absolute;
+
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+   height: 100%;
+
+   /* background-color: var(--environment-color); */
 }
 
-main > section:nth-child(1) figure svg {
-   fill: var(--background-mountain-color);
+:root {
+   --rollercoaster-looping-width: 70vmin;
 }
 
-/* ******************************* */
-/* Section With Rollercoaster Rail */
-/* ******************************* */
+main section > div:nth-child(1) {
+   z-index: 99;
 
-main > section:nth-child(2) {
-   /* background-color: yellow; */
+   position: absolute;
+   
+   display:grid;
+
+   place-content:center;
+
+   width: var(--rollercoaster-looping-width);
+   aspect-ratio: 1;
+
+   --rollercoaster-looping-border: 5px solid var(--rollercoaster-looping-color);
+
+   border: var(--rollercoaster-looping-border);
+   border-radius: 50%;
+
+   background-color: transparent;
 }
 
-main > section:nth-child(2) figure svg {
-   fill: none;
-
-   stroke: var(--background-rails-color);
-   stroke-width: var(--background-rails-stroke-width);
+:root {
+   --rollercoaster-cart-width: 18vmin;
+   --rollercoaster-cart-height: calc(var(--rollercoaster-cart-width) / 3);
 }
 
-/* ******************** */
-/* Section With Looping */
-/* ******************** */
+main section > div:nth-child(1) > div {  
+   position: relative;
+  
+   width: var(--rollercoaster-cart-width);
+   height: var(--rollercoaster-cart-height);
+   
+   --rollercoaster-cart-border-radius: 0 0 8px 8px;
 
-main > section:nth-child(3) {
-   /* background-color: blue; */
+   border-radius: var(--rollercoaster-cart-border-radius);
+    
+   background-color:var(--rollercoaster-cart-primary-color);
+
+   rotate: 180deg;
+    
+   animation: draaien 3s infinite;
+   animation-delay: -1s;
+   animation-play-state: paused;
 }
+
+
+main section > div:nth-child(1) > div::before, main section > div:nth-child(1) > div::after {
+   z-index: -1;
+
+   content: ' ';
+   
+   position: absolute;
+
+   width: 4vmin;
+   aspect-ratio: 1;
+
+   border-radius: 50%;
+   
+   background-color: var(--rollercoaster-cart-wheel-color);
+}
+
+
+/* Wielen */
+
+:root {
+   --wiel-waarde-1: -1.5vmin;
+   --wiel-waarde-2: 2vmin;
+}
+
+main section > div:nth-child(1) > div::before {
+   left: var(--wiel-waarde-2);
+   bottom: var(--wiel-waarde-1);
+}
+
+main section > div:nth-child(1) > div::after {
+   right: var(--wiel-waarde-2);
+   bottom: var(--wiel-waarde-1);
+}
+
+
+/* Styling voor beide details */
+
+main section > div:nth-child(1) > div > div:nth-child(1), main section > div:nth-child(1) > div > div:nth-child(2) {
+   position: absolute;
+  
+   bottom: var(--rollercoaster-cart-height);
+  
+   --tijdelijke-breedte: 6vmin;
+   --tijdelijke-hoogte: 5vmin;
+
+   width: var(--tijdelijke-breedte);
+   height: var(--tijdelijke-hoogte);
+  
+   --radius-top-left: 99rem;
+   --radius-top-right: 30rem;
+  
+   border-top-left-radius: var(--radius-top-left);
+   border-top-right-radius: var(--radius-top-right);
+}
+
+
+/* Voorkant */
+main section > div:nth-child(1) > div > div:nth-child(1) {
+   left: 0;
+
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+/* Achterkant */
+main section > div:nth-child(1) > div > div:nth-child(2) {
+   right: 0;
+
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+/* Achterkant – Rugleuning */
+main section > div:nth-child(1) > div > div:nth-child(2)::before {
+   content: ' ';
+  
+   position: absolute;
+   
+   left: 0.25vmin;
+   bottom: 0.25vmin;
+   
+   width: 3vmin;
+   height: 7vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+
+/* Bumper */
+main section > div:nth-child(1) > div > div:nth-child(3) {
+   position: absolute;
+  
+   right: -1vmin;
+   bottom: 1vmin;
+   left: -1vmin;
+   
+   width: 20vmin;
+   height: 3vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-accent-color);
+}
+
+main section > div:nth-child(1) > div > div:nth-child(3)::before {
+   content: ' ';
+   
+   position: absolute;
+
+   bottom: 4vmin;
+   left: 1.5vmin;
+
+   width: 1vmin;
+   height: 2vmin;
+
+   border-radius: 99px;
+
+   background-color: var(--rollercoaster-cart-detail-color);
+}
+
+:root {
+   --tijdelijk: -40vmin;
+}
+
+@keyframes draaien {
+	0%{
+		animation-timing-function:cubic-bezier(0.855, 0.050, 0.855, 0.060);
+		transform:rotate(0turn) translatey(33vmin) rotate(0turn);
+	}
+	50% {
+		animation-timing-function:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		transform:rotate(.5turn) translatey(33vmin) rotate(0turn);
+	}
+
+	100% {
+		transform:rotate(1turn) translatey(33vmin) rotate(0turn);
+	}
+}
+
+
+
+
+main section > div:nth-child(2) {
+   position: relative;
+  
+   display: grid;
+   place-content: center;
+
+   width: 82vmin;
+   aspect-ratio: 1;
+
+   --border-color: var(--rollercoaster-looping-color);
+   --border: 5px solid var(--border-color);
+
+   border: var(--border);
+   border-radius: 50%;
+   
+   background-color: transparent;
+
+   --mask-color: red;
+   --mask-radius-circle: radial-gradient(circle at center, transparent 60%, var(--mask-color) 51%);
+
+   -webkit-mask-image: var(--mask-radius-circle);
+   mask-image: var(--mask-radius-circle);
+
+   --line-colors: var(--rollercoaster-looping-color);
+   --waarde-1: 1.5px;
+   --waarde-2: 1.5px;
+
+   background-image: 
+   
+   linear-gradient(transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(5deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(10deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(15deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(20deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(25deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(30deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(35deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+
+   linear-gradient(40deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(45deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(50deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(55deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   
+   linear-gradient(60deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(65deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(70deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(75deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(80deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(85deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(90deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(95deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(100deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(105deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(110deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(115deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(130deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(135deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(140deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(145deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(150deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(155deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(160deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(165deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+   linear-gradient(170deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+   linear-gradient(175deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%);
+ }
+
+
+
+/* *********** */
+/* Environment */
+/* *********** */
+
+
+main aside {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+
+   align-items: flex-end;
+   justify-content: flex-end;
+}
+
+main aside figure {
+
+   width: 100%;
+   height: auto;
+
+   aspect-ratio: 16 / 9;
+}
+
+main aside figure svg {
+   fill: var(--environment-mountains-color);
+}
+
+
+
+
 
 

@@ -213,9 +213,9 @@ Waar ik nu sta.
 <br>
 
 ### Hindernissen
-Het idee was om met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path">Css Motion Path</a> een "achtbaan karretje" opgebouwd uit HTML elementen, te animeren over een SVG in de vorm van een looping. Dit was in gedachte 🧠 een perfect idee. Hierdoor kon ik namelijk in Illustrator het pad van de achtbaan tekenen en zou ik bijvoorbeeld een 🥚 vormige looping of een kurketrekker kunnen maken waar het achtbaan karretje ✨ perfect ✨ over animeert. 
+Het idee was om met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path">Css Motion Path</a> een "achtbaan karretje" opgebouwd uit HTML elementen, te animeren over een SVG in de vorm van een looping. Dit was in gedachte 🧠 een perfect idee. Hierdoor kon ik namelijk in Illustrator het pad van de achtbaan tekenen en zou ik bijvoorbeeld een 🥚 vormige looping 🎢 of een kurketrekker kunnen maken waar het achtbaan karretje ✨ perfect ✨ over animeert. 
 
-<strong>Helaas!</strong> ondanks dat de kracht van een SVG is, dat deze responsive is. Krijgt deze in CSS een gefixeerde waarde, waardoor het object wat je animeert op het pad, eigenlijk compleet uit koers raakt. <!-- Voorbeeld toevoegen --> Nu zijn daar meerdere <a href="https://css-tricks.com/create-a-responsive-css-motion-path-sure-we-can/">oplossingen</a> voor, alleen zijn deze niet efficiënt of 🚫 verboden 🚫 bij dit vak, aangezien hier 🙅🏾‍♂️ JavaScript 👎🏾 voor nodig is.
+<strong>Helaas!</strong> ondanks dat de kracht van een SVG is, dat deze responsive is. Krijgt deze in CSS een gefixeerde waarde, waardoor het object wat je animeert op het pad, eigenlijk compleet uit koers raakt, tenzij je een SVG in een SVG animeert 💀. <!-- Voorbeeld toevoegen --> Nu zijn daar meerdere <a href="https://css-tricks.com/create-a-responsive-css-motion-path-sure-we-can/">oplossingen</a> voor, alleen zijn deze niet efficiënt of 🚫 verboden 🚫 bij dit vak, aangezien hier 🙅🏾‍♂️ JavaScript 👎🏾 voor nodig is.
 
 <br>
 

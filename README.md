@@ -206,6 +206,7 @@ Uploaden vanuit schetsboek ..
 <summary>Voortgang 2</summary>
 
 ### Stand van zaken
+Waar ik nu sta.
 
 <img src="docs/assets/images/svz2.png" width="100%" alt="">
 

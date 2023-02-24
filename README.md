@@ -207,7 +207,7 @@ Uploaden vanuit schetsboek ..
 
 ### Stand van zaken
 
-<img src="docs/assets/images/svz2.png" width="480px" alt="">
+<img src="docs/assets/images/svz2.png" width="100%" alt="">
 
 <br>
 
@@ -230,7 +230,7 @@ Eerder heb ik samen met <a href="https://www.sinds1971.nl/">Sanne</a> een object
 <br>
 
 ### Waar ik trots op ben
-Ik hou ervan om mezelf uit te dagen tijdens experimenteren. Zodra ik me niet helemaal op mijn gemak voel tijdens het werken met iets wat compleet nieuw voor mij is, weet ik dat ik goed opweg ben. Na het werken met SVG's, had ik voor de makkelijke route kunnen gaan en mijn looping in Adobe Illustrator creëren en deze vervolgens als SVG exporteren en implementeren in mijn website. Alleen heb ik ervoor gekozen om deze op te bouwen met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">CSS Gradients</a> en gebruik te maken van iets waar ik nooit eerder gebruik van heb gemaakt in CSS, namelijk <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask">CSS Masks</a> 🏆.
+Ik hou ervan om mezelf uit te dagen tijdens 🧪 experimenteren 🧑🏾‍🏫. Zodra ik me niet helemaal op mijn gemak 😰 voel tijdens het werken met iets wat compleet nieuw voor mij is, weet ik dat ik goed opweg ben 🙌🏾. Na het werken met SVG's, had ik voor de makkelijke route kunnen gaan en mijn looping in Adobe Illustrator creëren en deze vervolgens als SVG exporteren en implementeren in mijn website. Alleen heb ik ervoor gekozen om deze op te bouwen 👷🏾‍♂️ met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">CSS Gradients</a> en gebruik te maken van iets waar ik nooit eerder gebruik van heb gemaakt in CSS, namelijk <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask">CSS Masks</a> 🏆.
 
 
 

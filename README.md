@@ -202,14 +202,28 @@ Uploaden vanuit schetsboek ..
 
 ### Stand van zaken
 
-## Hindernissen
+<img src="docs/assets/images/svz2.png" width="375px" alt="">
+
+#### Hindernissen
 Het idee was om met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path">Css Motion Path</a> een "achtbaan karretje" opgebouwd uit HTML elementen, te animeren over een SVG in de vorm van een looping. Dit was in gedachte 🧠 een perfect idee. Hierdoor kon ik namelijk in Illustrator het pad van de achtbaan tekenen en zou ik bijvoorbeeld een 🥚 vormige looping of een kurketrekker kunnen maken waar het achtbaan karretje ✨ perfect ✨ over animeert. 
 
 <strong>Helaas!</strong> ondanks dat de kracht van een SVG is, dat deze responsive is. Krijgt deze in CSS een gefixeerde waarde, waardoor het object wat je animeert op het pad, eigenlijk compleet uit koers raakt. <!-- Voorbeeld toevoegen --> Nu zijn daar meerdere <a href="https://css-tricks.com/create-a-responsive-css-motion-path-sure-we-can/">oplossingen</a> voor, alleen zijn deze niet efficiënt of 🚫 verboden 🚫 bij dit vak, aangezien hier 🙅🏾‍♂️ JavaScript 👎🏾 voor nodig is.
 
-## Oplossing
+### Wat heb ik geleerd?
+Dat CSS Motion Path, enorm krachtig is en kan zijn voor de toekomst van animeren met CSS. Alleen in zijn huidige staat niet zijn volledige potentie behaald.
 
-<img src="docs/assets/images/svz2.png" width="375px" alt="">
+<br>
+
+### Oplossing
+Eerder heb ik samen met <a href="https://www.sinds1971.nl/">Sanne</a> een object geanimeerd in een cirkel, wat in principe de basis vormt van de looping die ik wil maken. Hoofdpijn 🤕, frustratie 🤬 en een ervaring 🤩 rijker ben ik vanuit daar verdergegaan en laat ik <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path">Css Motion Path</a> voor het maken van de achtbaan éven buiten beeld. 
+
+
+<br>
+
+### Waar ik trots op ben
+Ik hou ervan om mezelf uit te dagen tijdens experimenteren. Zodra ik me niet helemaal op mijn gemak voel tijdens het werken met iets wat compleet nieuw voor mij is, weet ik dat ik goed opweg ben. Na het werken met SVG's, had ik voor de makkelijke route kunnen gaan en mijn looping in Adobe Illustrator creëren en deze vervolgens als SVG exporteren en implementeren in mijn website. Alleen heb ik ervoor gekozen om deze op te bouwen met <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients">CSS Gradients</a> en gebruik te maken van iets waar ik nooit eerder gebruik van heb gemaakt in CSS, namelijk <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask">CSS Masks</a> 🏆.
+
+
 
 
 ### Agenda voor meeting

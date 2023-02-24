@@ -155,6 +155,38 @@ Uploaden vanuit schetsboek ..
 
 
 ### Agenda voor meeting
+
+<table>
+  <tr>
+   <th>Danian</th>
+   <th>Max</th>
+   <th>Salwa</th>
+   <th>Stein</th>
+   <th>Tristan</th>
+  </tr>
+  <tr>
+   <td>Vraag 1</td>
+   <td>Vraag 1</td>
+   <td>vraag 1</td>
+   <td>Vraag 1</td>
+   <td>vraag 1</td>
+  </tr>
+  <tr>
+   <td>Vraag 2</td>
+   <td>Vraag 2</td>
+   <td>vraag 2</td>
+   <td>Vraag 2</td>
+   <td>vraag 2</td>
+  </tr>
+
+  <tr>
+   <td>Vraag 3</td>
+   <td>Vraag 3</td>
+   <td>vraag 3</td>
+   <td>Vraag 3</td>
+   <td>vraag 3</td>
+  </tr>
+</table>
  
 
 | Danian          | Max               | Salwa                 | Stein        | Tristan     
@@ -173,7 +205,7 @@ Uploaden vanuit schetsboek ..
 
 ## Voortgang 2
 
-<details>
+<details open>
 <summary>Voortgang 2</summary>
 
 ### Stand van zaken

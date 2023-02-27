@@ -132,7 +132,7 @@ main section {
 /* Rollercoaster Inner Looping */
 /* *************************** */
 
-main section > div:nth-child(1) {
+main section > figure:nth-child(1) div:nth-child(1) {
    z-index: 99;
 
    position: absolute;

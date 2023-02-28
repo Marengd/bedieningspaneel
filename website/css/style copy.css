@@ -77,12 +77,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
-/* **** */
-/* Body */
-/* **** */
-
  body {
    background-color: white;
  }
@@ -131,7 +125,9 @@ main section {
    justify-content: center;
 
    width: 82vmin; /* Oppassen :) */
-   height: auto;
+   height: 80%;
+
+   background-color: #3c3c3c;
 }
 
 :root {
@@ -142,7 +138,7 @@ main section {
 /* Rollercoaster Inner Looping */
 /* *************************** */
 
-main section > figure:nth-child(1) div:nth-child(1) {
+main section > div:nth-child(1) {
    z-index: 99;
 
    position: absolute;
@@ -440,11 +436,11 @@ main section > div:nth-child(3) {
    z-index: -1;
 
    position: absolute;
+
+   bottom: 0;
 	
-	bottom: -38vmin;
-	
-	--size-pillar:1.5cqw;
-	--amount-pillar:11;
+	--size-pillar: 1.5cqw;
+	--amount-pillar: 11;
 	--color-pillar:crimson;
 	
 	--color-beams:green;
@@ -452,7 +448,7 @@ main section > div:nth-child(3) {
 	--height-beams: 90%;
 	
 	width:100%;
-	height: 95%;
+   height: 40%;
 	
    --mask-radius-ellipse: radial-gradient(ellipse 97% 100% at top, transparent 50%, red 50%);
 

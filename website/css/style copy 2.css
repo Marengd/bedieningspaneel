@@ -61,7 +61,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
    /* Rollercoaster */
-   --rollercoaster-beams-color: #a93b56;
+   --rollercoaster-base-color: #a93b56;
    --rollercoaster-looping-color: #d65275;
 
    /* Rollercoaster Cart */
@@ -84,81 +84,115 @@ p, h1, h2, h3, h4, h5, h6 {
 /* **** */
 
 body {
-   height: 100%;
-   
    --body-bg: #212121;
    background-color: var(--body-bg);
  }
- 
- 
- main {
-   position: relative;
-   
-   display: grid;
-   
-   place-content: center;
-   
-   width: 100%;
-   height: 100%;
-   
-   --main-bg: #212121;
-   background-color: var(--main-bg);
- }
- 
- 
- main > figure {
-   width:65vmin;
-   height: 75vmin;
-   
-   --figure-bg: transparent;
-   background-color: var(--figure-bg);
- }
- 
- 
- main > figure header {
-   z-index: 99;
-   
-   position: relative;
-   
+
+
+/* **** */
+/* Main */
+/* **** */
+
+main {
    display: flex;
    
+   flex-direction: column;
+
    align-items: center;
    justify-content: center;
-   
+
    width: 100%;
-   aspect-ratio: 1;
-   
-   background-color: transparent;
- }
- 
- 
- main > figure header div {
+   height: 100%;
+
+   --main-bg: #212121;
+   background-color: var(--main-bg);
+}
+
+main section {
+   position: relative;
+
+   display: grid;
+
+   place-content: center;
+
+   width: 80vmin;
+
+   --section-bg: green;
+   background-color: var(--section-bg);
+}
+
+main section figure {
+   container-type: inline-size;
+
+   position: relative;
+
+   width: 100%;
+   height: 100%;
+}
+
+/* ********************* */
+/* Rollercoaster Looping */
+/* ********************* */
+
+main section figure:nth-child(1) {
+   z-index: 99;
+
+   top: 0;
+
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   background-color: blue;
+}
+
+
+/* *************************** */
+/* Rollercoaster Inner Looping */
+/* *************************** */
+
+main section figure:nth-child(1) > div:nth-child(1) {
+   z-index: 99;
+
    position: absolute;
    
-   border-radius: 50%;
- }
+   display:grid;
 
+   place-content:center;
 
+   --rollercoaster-looping-width: 60vmin;
 
+   width: var(--rollercoaster-looping-width);
+   aspect-ratio: 1;
 
-
-
-
- main > figure header div:nth-child(1), figure header div:nth-child(2) {
-   --rollercoaster-looping-border-color: var(--rollercoaster-looping-color);
-   --rollercoaster-looping-border: .75vmin solid var(--rollercoaster-looping-color);
+   --rollercoaster-looping-border: 5px solid var(--rollercoaster-looping-color);
 
    border: var(--rollercoaster-looping-border);
    border-radius: 50%;
- }
 
- /* ****************** */
- /* Outside of Looping */
- /* ****************** */
+   background-color: transparent;
+}
 
- main > figure header div:nth-child(1) {
-   width: 100%;
+/* *************************** */
+/* Rollercoaster Outer Looping */
+/* *************************** */
+
+main section figure:nth-child(1) > div:nth-child(2) {
+   z-index: 99;
+
+   position: absolute;
+  
+   display: grid;     
+
+   width: 60vmin;
    aspect-ratio: 1;
+
+   --border-color: var(--rollercoaster-looping-color);
+   --border: 1vmin solid var(--border-color);
+
+   border: var(--border);
+   border-radius: 50%;
 
    --mask-color: red;
    --mask-radius-circle: radial-gradient(circle at center, transparent 60%, var(--mask-color) 51%);
@@ -167,8 +201,8 @@ body {
    mask-image: var(--mask-radius-circle);
 
    --line-colors: var(--rollercoaster-looping-color);
-   --waarde-1: .2vmin;
-   --waarde-2: .2vmin;
+   --waarde-1: 1.5px;
+   --waarde-2: 1.5px;
 
    background-image: 
    
@@ -236,91 +270,54 @@ body {
  }
 
 
- /* ***************** */
- /* Inside of Looping */
- /* ***************** */
- 
- main > figure header div:nth-child(2) {
-   position: relative;
-
-   display: grid;
-
-   place-items: center;
-
-   width: 85%;
-   aspect-ratio: 1;
- }
- 
- /* ****************** */
- /* Rollercoaster Cart */
- /* ****************** */
-
- main > figure header div:nth-child(2) figure {
-   position: absolute;
- }
- 
- main > figure header div:nth-child(2) figure ul {
-   width: 8vmin;
-   aspect-ratio: 1;
-
-   background-color: yellow;
- }
-
-
-/* ************************************ */
-/* Rollercoaster Cart Looping Animation */
-/* ************************************ */
-
-@keyframes looping {
-   0%{
-      transform:rotate(0turn) translatey(20vmin) rotate(0turn);
-   }
-   100% {
-      transform:rotate(1turn) translatey(20vmin) rotate(0turn);
-   }
-}
 
 
 
 
-main > figure footer {
-   transform: translateY(-35vmin);
-}
 
-main > figure footer {
-   container-type: inline-size;
-   
-   position: relative;
 
-   display: flex;
 
-   align-items: center;
-   justify-content: center;
+
+
+
+
+
+
+
+
+
+
+/* ****************** */
+/* Rollercoaster Base */
+/* ****************** */
+
+main section figure:nth-child(2) {
+   bottom: 0;
 
    width: 100%;
-   height: 45vmin;
+   height: 40vmin;
+
+   background-color: pink;
 }
- 
- main > figure footer div {
-   width: 100%;
+
+main section figure:nth-child(2) div {
+	--size-pillar: 1.5cqw;
+	--amount-pillar: 11;
+	--color-pillar:crimson;
+	
+	--color-beams:green;
+	--size-beams: .5cqw;
+	--height-beams: 90%;
+	
+	width:100%;
    height: 100%;
+	
+   --mask-radius-ellipse: radial-gradient(ellipse 97% 100% at top, transparent 50%, red 50%);
 
-   --rollercoaster-looping-width: 65vmin; /* Figure width */ 
-   --mask-radius-ellipse: radial-gradient(circle var(--rollercoaster-looping-width) at 50% 5%, transparent 50%, red 50%);
-
- 
    -webkit-mask-image: var(--mask-radius-ellipse);
    mask-image: var(--mask-radius-ellipse);
-   
-   --size-pillar: 1cqw;
-	--amount-pillar: 11;
-	--color-pillar: var(--rollercoaster-beams-color);
-	
-	--color-beams: var(--rollercoaster-beams-color);
-	--size-beams: .5cqw;
-	--height-beams: 95%;
 
-   background-image:
+	background-image:
    
       radial-gradient(circle at calc(var(--size-pillar) / 2) center, var(--color-pillar) 0 calc(var(--size-pillar) / 2), transparent 0),
       repeating-linear-gradient(90deg, var(--color-pillar) 0 var(--size-pillar), transparent 0 calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1) )),
@@ -329,7 +326,7 @@ main > figure footer {
 	
 	background-size:
    
-      calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1)) var(--size-pillar), 100% calc( 100% - var(--size-pillar) / 2), 100% var(--height-beams), 100% var(--height-beams);
+      calc((100% - var(--size-pillar)) / (var(--amount-pillar) - 1)) var(--size-pillar), 100% calc( 100% - var(--size-pillar) / 2), 100% var(--height-beams), 100% var(--height-beams);
 	
 	background-repeat:		
 		repeat-x, 
@@ -342,7 +339,75 @@ main > figure footer {
 		left top,
 		left top,
 		left top;
- }
+   }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********** */
+/* Environment */
+/* *********** */
+
+main aside {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+
+   align-items: flex-end;
+   justify-content: flex-end;
+}
+
+main aside figure {
+
+   width: 100%;
+   height: auto;
+
+   aspect-ratio: 16 / 9;
+}
+
+main aside figure svg {
+   fill: var(--environment-mountains-color);
+}
+
 
 
 

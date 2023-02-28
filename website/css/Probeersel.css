@@ -61,7 +61,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
    /* Rollercoaster */
-   --rollercoaster-beams-color: #a93b56;
+   --rollercoaster-base-color: #a93b56;
    --rollercoaster-looping-color: #d65275;
 
    /* Rollercoaster Cart */
@@ -77,88 +77,301 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-
-/* **** */
-/* Body */
-/* **** */
-
-body {
-   height: 100%;
-   
-   --body-bg: #212121;
-   background-color: var(--body-bg);
+ body {
+   background-color: white;
  }
- 
- 
- main {
-   position: relative;
-   
-   display: grid;
-   
-   place-content: center;
-   
-   width: 100%;
-   height: 100%;
-   
-   --main-bg: #212121;
-   background-color: var(--main-bg);
+
+ body:has(#achtbaan:checked) main section > div:nth-child(1) > div {
+   animation-play-state: running;
  }
- 
- 
- main > figure {
-   width:65vmin;
-   height: 75vmin;
-   
-   --figure-bg: transparent;
-   background-color: var(--figure-bg);
- }
- 
- 
- main > figure header {
+
+form {
    z-index: 99;
-   
+   position: fixed;
+
+   color: white;
+}
+
+main {
    position: relative;
-   
+
    display: flex;
-   
+
    align-items: center;
    justify-content: center;
-   
+
    width: 100%;
-   aspect-ratio: 1;
+   height: 100%;
+
+   --main-bg: #212121;
+   background-color: var(--main-bg);
+}
+
+
+/* ************* */
+/* Rollercoaster */
+/* ************* */
+
+main section {
+   z-index: 99;
+
+   position: relative;
+
+   container-type: inline-size;
+
+   display: flex;
+
+   align-items: center;
+   justify-content: space-between;
+
+   width: 82vmin; /* Oppassen :) */
+   height: 90%;
+
+   background-color: #3c3c3c;
+}
+
+main section figure {
+   position: absolute;
+
+   padding: 0;
+   margin: 0;
    
-   background-color: transparent;
- }
- 
- 
- main > figure header div {
+   display: flex;
+
+   flex-direction: column;
+
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+   height: 100%;
+}
+
+main section figure:nth-child(1) {
+   top: -11vmin;
+}
+
+:root {
+   --rollercoaster-looping-width: 70vmin;
+}
+
+/* *************************** */
+/* Rollercoaster Inner Looping */
+/* *************************** */
+
+main section figure:nth-child(1) > div:nth-child(1) {
+   z-index: 99;
+
    position: absolute;
    
-   border-radius: 50%;
- }
+   display:grid;
 
+   place-content:center;
 
+   width: var(--rollercoaster-looping-width);
+   aspect-ratio: 1;
 
-
-
-
-
- main > figure header div:nth-child(1), figure header div:nth-child(2) {
-   --rollercoaster-looping-border-color: var(--rollercoaster-looping-color);
-   --rollercoaster-looping-border: .75vmin solid var(--rollercoaster-looping-color);
+   --rollercoaster-looping-border: 5px solid var(--rollercoaster-looping-color);
 
    border: var(--rollercoaster-looping-border);
    border-radius: 50%;
- }
 
- /* ****************** */
- /* Outside of Looping */
- /* ****************** */
+   background-color: transparent;
+}
 
- main > figure header div:nth-child(1) {
-   width: 100%;
+
+
+
+/* ****************** */
+/* Rollercoaster Cart */
+/* ****************** */
+
+:root {
+   --rollercoaster-cart-width: 18vmin;
+   --rollercoaster-cart-height: calc(var(--rollercoaster-cart-width) / 3);
+}
+
+
+main section figure:nth-child(1) > div:nth-child(1) > div { 
+   position: relative;
+  
+   width: var(--rollercoaster-cart-width);
+   height: var(--rollercoaster-cart-height);
+   
+   --rollercoaster-cart-border-radius: 0 0 8px 8px;
+
+   border-radius: var(--rollercoaster-cart-border-radius);
+    
+   background-color:var(--rollercoaster-cart-primary-color);
+
+   rotate: 180deg;
+    
+   animation: draaien 3s infinite;
+   animation-delay: -1s;
+   animation-play-state: paused;
+}
+
+
+main section figure:nth-child(1) > div:nth-child(1) > div::before, main section figure:nth-child(1) > div:nth-child(1) > div::after {
+   z-index: -99;
+
+   content: ' ';
+   
+   position: absolute;
+
+   width: 4vmin;
    aspect-ratio: 1;
+
+   border-radius: 50%;
+   
+   background-color: var(--rollercoaster-cart-wheel-color);
+}
+
+
+/* Wielen */
+
+:root {
+   --wiel-waarde-1: -1.5vmin;
+   --wiel-waarde-2: 2vmin;
+}
+
+main section figure:nth-child(1) > div:nth-child(1) > div::before {
+   left: var(--wiel-waarde-2);
+   bottom: var(--wiel-waarde-1);
+}
+
+main section figure:nth-child(1) > div:nth-child(1) > div::after {
+   right: var(--wiel-waarde-2);
+   bottom: var(--wiel-waarde-1);
+}
+
+
+/* Styling voor beide details */
+
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(1), main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) {
+   position: absolute;
+  
+   bottom: var(--rollercoaster-cart-height);
+  
+   --tijdelijke-breedte: 6vmin;
+   --tijdelijke-hoogte: 5vmin;
+
+   width: var(--tijdelijke-breedte);
+   height: var(--tijdelijke-hoogte);
+  
+   --radius-top-left: 99rem;
+   --radius-top-right: 30rem;
+  
+   border-top-left-radius: var(--radius-top-left);
+   border-top-right-radius: var(--radius-top-right);
+}
+
+
+/* Voorkant */
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) {
+   left: 0;
+
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+/* Achterkant */
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) {
+   right: 0;
+
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+/* Achterkant – Rugleuning */
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(2)::before {
+   content: ' ';
+  
+   position: absolute;
+   
+   left: 0.25vmin;
+   bottom: 0.25vmin;
+   
+   width: 3vmin;
+   height: 7vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-primary-color);
+}
+
+
+/* Bumper */
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) {
+   position: absolute;
+  
+   right: -1vmin;
+   bottom: 1vmin;
+   left: -1vmin;
+   
+   width: 20vmin;
+   height: 3vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-accent-color);
+}
+
+main section figure:nth-child(1) > div:nth-child(1) > div > div:nth-child(3)::before {
+   content: ' ';
+   
+   position: absolute;
+
+   bottom: 4vmin;
+   left: 1.5vmin;
+
+   width: 1vmin;
+   height: 2vmin;
+
+   border-radius: 99px;
+
+   background-color: var(--rollercoaster-cart-detail-color);
+}
+
+:root {
+   --tijdelijk: -40vmin;
+}
+
+@keyframes draaien {
+	0%{
+		animation-timing-function:cubic-bezier(0.855, 0.050, 0.855, 0.060);
+		transform:rotate(0turn) translatey(33vmin) rotate(0turn);
+	}
+	50% {
+		animation-timing-function:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		transform:rotate(.5turn) translatey(33vmin) rotate(0turn);
+	}
+
+	100% {
+		transform:rotate(1turn) translatey(33vmin) rotate(0turn);
+	}
+}
+
+
+
+
+
+/* *************************** */
+/* Rollercoaster Outer Looping */
+/* *************************** */
+
+main section figure:nth-child(1) > div:nth-child(2) {
+   position: relative;
+  
+   display: grid;
+   place-content: center;
+
+   width: 82vmin;
+   aspect-ratio: 1;
+
+   --border-color: var(--rollercoaster-looping-color);
+   --border: 1.5cqw solid var(--border-color);
+
+   border: var(--border);
+   border-radius: 50%;
 
    --mask-color: red;
    --mask-radius-circle: radial-gradient(circle at center, transparent 60%, var(--mask-color) 51%);
@@ -167,8 +380,8 @@ body {
    mask-image: var(--mask-radius-circle);
 
    --line-colors: var(--rollercoaster-looping-color);
-   --waarde-1: .2vmin;
-   --waarde-2: .2vmin;
+   --waarde-1: 1.5px;
+   --waarde-2: 1.5px;
 
    background-image: 
    
@@ -236,91 +449,37 @@ body {
  }
 
 
- /* ***************** */
- /* Inside of Looping */
- /* ***************** */
- 
- main > figure header div:nth-child(2) {
-   position: relative;
+/* ****************** */
+/* Rollercoaster Base */
+/* ****************** */
 
-   display: grid;
 
-   place-items: center;
+main section figure:nth-child(2) div {
+   z-index: -1;
 
-   width: 85%;
-   aspect-ratio: 1;
- }
- 
- /* ****************** */
- /* Rollercoaster Cart */
- /* ****************** */
-
- main > figure header div:nth-child(2) figure {
    position: absolute;
- }
- 
- main > figure header div:nth-child(2) figure ul {
-   width: 8vmin;
-   aspect-ratio: 1;
+	
+   bottom: 0; /* Zodat standaard beneden blijft */
+	
+	--size-pillar: 1.5cqw;
+	--amount-pillar: 11;
+	--color-pillar:crimson;
+	
+	--color-beams:green;
+	--size-beams: .5cqw;
+	--height-beams: 90%;
+	
+	width: 100%;
+	height: 50%;
+	
+   --mask-radius-ellipse: radial-gradient(ellipse 97% 100% at top, transparent 50%, red 50%);
 
-   background-color: yellow;
- }
-
-
-/* ************************************ */
-/* Rollercoaster Cart Looping Animation */
-/* ************************************ */
-
-@keyframes looping {
-   0%{
-      transform:rotate(0turn) translatey(20vmin) rotate(0turn);
-   }
-   100% {
-      transform:rotate(1turn) translatey(20vmin) rotate(0turn);
-   }
-}
-
-
-
-
-main > figure footer {
-   transform: translateY(-35vmin);
-}
-
-main > figure footer {
-   container-type: inline-size;
-   
-   position: relative;
-
-   display: flex;
-
-   align-items: center;
-   justify-content: center;
-
-   width: 100%;
-   height: 45vmin;
-}
- 
- main > figure footer div {
-   width: 100%;
-   height: 100%;
-
-   --rollercoaster-looping-width: 65vmin; /* Figure width */ 
-   --mask-radius-ellipse: radial-gradient(circle var(--rollercoaster-looping-width) at 50% 5%, transparent 50%, red 50%);
-
- 
    -webkit-mask-image: var(--mask-radius-ellipse);
    mask-image: var(--mask-radius-ellipse);
-   
-   --size-pillar: 1cqw;
-	--amount-pillar: 11;
-	--color-pillar: var(--rollercoaster-beams-color);
-	
-	--color-beams: var(--rollercoaster-beams-color);
-	--size-beams: .5cqw;
-	--height-beams: 95%;
 
-   background-image:
+
+	
+	background-image:
    
       radial-gradient(circle at calc(var(--size-pillar) / 2) center, var(--color-pillar) 0 calc(var(--size-pillar) / 2), transparent 0),
       repeating-linear-gradient(90deg, var(--color-pillar) 0 var(--size-pillar), transparent 0 calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1) )),
@@ -342,7 +501,75 @@ main > figure footer {
 		left top,
 		left top,
 		left top;
- }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********** */
+/* Environment */
+/* *********** */
+
+main aside {
+   position: absolute;
+
+   inset: 0;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+
+   align-items: flex-end;
+   justify-content: flex-end;
+}
+
+main aside figure {
+
+   width: 100%;
+   height: auto;
+
+   aspect-ratio: 16 / 9;
+}
+
+main aside figure svg {
+   fill: var(--environment-mountains-color);
+}
+
 
 
 

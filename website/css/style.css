@@ -260,10 +260,135 @@ body {
  }
  
  main > figure header div:nth-child(2) figure ul {
-   width: 8vmin;
+   list-style: none;
+
+   position: relative;
+  
+   --rollercoaster-cart-width: 18vmin;
+   --rollercoaster-cart-height: calc(var(--rollercoaster-cart-width) / 3);
+
+   width: var(--rollercoaster-cart-width);
+   height: var(--rollercoaster-cart-height);
+   
+   --rollercoaster-cart-border-radius: 0 0 8px 8px;
+
+   border-radius: var(--rollercoaster-cart-border-radius);
+    
+   background-color:var(--rollercoaster-cart-primary-color);
+
+   /* rotate: 180deg; */
+ }
+
+
+ main > figure header div:nth-child(2) figure ul::before, main > figure header div:nth-child(2) figure ul::after {
+   --wiel-waarde-1: -1.5vmin;
+   --wiel-waarde-2: 2vmin;
+   
+   z-index: -1;
+
+   content: ' ';
+
+   position: absolute;
+
+   bottom: var(--wiel-waarde-1);
+
+   width: 4vmin;
    aspect-ratio: 1;
 
-   background-color: yellow;
+   border-radius: 50%;
+
+   background-color: var(--rollercoaster-cart-wheel-color);
+ }
+
+ main > figure header div:nth-child(2) figure ul::before {
+   left: var(--wiel-waarde-2);
+ }
+
+ main > figure header div:nth-child(2) figure ul::after {
+   right: var(--wiel-waarde-2);
+ }
+
+
+ /* Bumper */
+ main > figure header div:nth-child(2) figure ul li:nth-child(1) {
+   position: absolute;
+  
+   right: -1vmin;
+   bottom: 1vmin;
+   left: -1vmin;
+   
+   width: 20vmin;
+   height: 3vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-accent-color);
+ }
+
+
+/* Voorkant en Achterkant */
+ main > figure header div:nth-child(2) figure ul li:nth-child(2), main > figure header div:nth-child(2) figure ul li:nth-child(3) {
+   position: absolute;
+  
+   bottom: var(--rollercoaster-cart-height);
+  
+   --tijdelijke-breedte: 6vmin;
+   --tijdelijke-hoogte: 5vmin;
+
+   width: var(--tijdelijke-breedte);
+   height: var(--tijdelijke-hoogte);
+  
+   --radius-top-left: 99rem;
+   --radius-top-right: 30rem;
+  
+   border-top-left-radius: var(--radius-top-left);
+   border-top-right-radius: var(--radius-top-right);
+
+   background-color: var(--rollercoaster-cart-primary-color);
+ }
+
+
+ /* Voorkant */
+ main > figure header div:nth-child(2) figure ul li:nth-child(2) {
+   left: 0;
+ }
+
+ main > figure header div:nth-child(2) figure ul li:nth-child(2)::before {
+   content: ' ';
+   
+   position: absolute;
+
+   bottom: 0;
+   left: 1.5vmin;
+
+   width: 1vmin;
+   height: 2vmin;
+
+   border-radius: 99px;
+
+   background-color: var(--rollercoaster-cart-detail-color);
+ }
+
+
+ /* Achterkant */
+ main > figure header div:nth-child(2) figure ul li:nth-child(3) {
+   right: 0;
+ }
+
+ main > figure header div:nth-child(2) figure ul li:nth-child(3)::before {
+   content: ' ';
+  
+   position: absolute;
+   
+   left: 0.5vmin;
+   bottom: 0.25vmin;
+   
+   width: 3vmin;
+   height: 7vmin;
+   
+   border-radius: 99px;
+   
+   background-color: var(--rollercoaster-cart-primary-color);
  }
 
 
@@ -272,12 +397,18 @@ body {
 /* ************************************ */
 
 @keyframes looping {
-   0%{
-      transform:rotate(0turn) translatey(20vmin) rotate(0turn);
-   }
-   100% {
-      transform:rotate(1turn) translatey(20vmin) rotate(0turn);
-   }
+	0%{
+		animation-timing-function:cubic-bezier(0.855, 0.050, 0.855, 0.060);
+		transform:rotate(0turn) translatey(25vmin) rotate(0turn);
+	}
+	50% {
+		animation-timing-function:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		transform:rotate(.5turn) translatey(25vmin) rotate(0turn);
+	}
+
+	100% {
+		transform:rotate(1turn) translatey(25vmin) rotate(0turn);
+	}
 }
 
 

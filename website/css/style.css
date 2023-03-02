@@ -1,6 +1,16 @@
 
 
 
+/* *************************************** */
+/* Css to the rescue 2023 © Danian Marengo */
+/* *************************************** */
+
+
+
+
+
+
+
 
 /* ********* */
 /* CSS Reset */
@@ -60,7 +70,15 @@ p, h1, h2, h3, h4, h5, h6 {
 /* ************************ */
 
 :root {
-   /* Rollercoaster */
+  /* Rollercoaster */
+
+  /* Rollercoaster Looping */
+  --rollercoaster-looping-width: 65vmin;
+  --rollercoaster-looping-height: calc(var(--rollercoaster-looping-width) + 10vmin);
+  
+
+
+   /* Rollercoaster Color*/
    --rollercoaster-beams-color: #a93b56;
    --rollercoaster-looping-color: #d65275;
 
@@ -78,263 +96,321 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 
-
 /* **** */
 /* Body */
 /* **** */
 
 body {
    height: 100%;
-   
-   --body-bg: #212121;
-   background-color: var(--body-bg);
  }
  
  
- main {
-   position: relative;
-   
-   display: grid;
-   
-   place-items: center;
-   
-   width: 100%;
-   height: 100%;
-   
-   --main-bg: #212121;
-   background-color: var(--main-bg);
- }
+/* ********* */
+/* Themepark */
+/* ********* */
+
+main {
+  position: relative;
+  
+  display: grid;
+  
+  place-items: center;
+  
+  width: 100%;
+  height: 100%;
+}
  
- 
- main > figure {
+/* ************* */
+/* Rollercoaster */
+/* ************* */
+
+main > figure {
+  --figure-bg: transparent;
+
   z-index: 99;
 
   position: absolute;
 
-  width: 65vmin;
-  height: 75vmin;
-   
-  --figure-bg: transparent;
+  width: var(--rollercoaster-looping-width);
+  height: var(--rollercoaster-looping-height);
+    
   background-color: var(--figure-bg);
- }
+}
  
+/* ********************* */
+/* Rollercoaster looping */
+/* ********************* */
  
- main > figure header {
-   z-index: 99;
-   
-   position: relative;
-   
-   display: flex;
-   
-   align-items: center;
-   justify-content: center;
-   
-   width: 100%;
-   aspect-ratio: 1;
-   
-   background-color: transparent;
- }
+main > figure header {
+  z-index: 99;
+  
+  position: relative;
+  
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  aspect-ratio: 1;
+  
+  background-color: transparent;
+}
  
- 
- main > figure header div {
-   position: absolute;
-   
-   border-radius: 50%;
- }
-
-
-
-
-
-
-
- main > figure header div:nth-child(1), figure header div:nth-child(2) {
-   --rollercoaster-looping-border-color: var(--rollercoaster-looping-color);
-   --rollercoaster-looping-border: .75vmin solid var(--rollercoaster-looping-color);
-
-   border: var(--rollercoaster-looping-border);
-   border-radius: 50%;
- }
-
- /* ****************** */
- /* Outside of Looping */
- /* ****************** */
-
- main > figure header div:nth-child(1) {
-   width: 100%;
-   aspect-ratio: 1;
-
-   --mask-color: red;
-   --mask-radius-circle: radial-gradient(circle at center, transparent 60%, var(--mask-color) 51%);
-
-   -webkit-mask-image: var(--mask-radius-circle);
-   mask-image: var(--mask-radius-circle);
-
-   --line-colors: var(--rollercoaster-looping-color);
-   --waarde-1: .2vmin;
-   --waarde-2: .2vmin;
-
-   background-image: 
-   
-      linear-gradient(transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(5deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(10deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(15deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(20deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(25deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(30deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(35deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-
-      linear-gradient(40deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(45deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(50deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(55deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      
-      linear-gradient(60deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(65deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(70deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(75deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(80deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(85deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(90deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(95deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(100deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(105deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(110deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(115deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(130deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(135deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(140deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(145deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(150deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(155deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(160deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(165deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-
-      linear-gradient(170deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
-      linear-gradient(175deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%);
- }
-
-
- /* ***************** */
- /* Inside of Looping */
- /* ***************** */
- 
- main > figure header div:nth-child(2) {
-   position: relative;
-
-   display: grid;
-
-   place-items: center;
-
-   width: 85%;
-   aspect-ratio: 1;
- }
- 
- /* ****************** */
- /* Rollercoaster Cart */
- /* ****************** */
-
- main > figure header div:nth-child(2) figure {
-  display: none;
+main > figure header > div {
+  --rollercoaster-looping-border-color: var(--rollercoaster-looping-color);
+  --rollercoaster-looping-border: .75vmin solid var(--rollercoaster-looping-color);
+  --rollercoaster-looping-border-radius: 50%;
 
   position: absolute;
- }
- 
- main > figure header div:nth-child(2) figure ul {
-   list-style: none;
 
-   position: relative;
-  
-   --rollercoaster-cart-width: 18vmin;
-   --rollercoaster-cart-height: calc(var(--rollercoaster-cart-width) / 3);
+  border: var(--rollercoaster-looping-border);
+  border-radius: 50%;
+}
 
-   width: var(--rollercoaster-cart-width);
-   height: var(--rollercoaster-cart-height);
-   
-   --rollercoaster-cart-border-radius: 0 0 8px 8px;
+/* ******************************** */
+/* Rollercoaster outside of looping */
+/* ******************************** */
 
-   border-radius: var(--rollercoaster-cart-border-radius);
+main > figure header > div:nth-child(1) {
+  --mask-color: red;
+  --mask-radius-circle: radial-gradient(circle at center, transparent 60%, var(--mask-color) 51%);
+
+  --line-colors: var(--rollercoaster-looping-color);
+  --waarde-1: .2vmin;
+  --waarde-2: .2vmin;
+
+  width: 100%;
+  aspect-ratio: 1;
+
+  -webkit-mask-image: var(--mask-radius-circle);
+  mask-image: var(--mask-radius-circle);
+
+  background-image: 
+
+    linear-gradient(transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(5deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(10deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(15deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(20deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(25deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(30deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(35deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+
+    linear-gradient(40deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(45deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(50deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(55deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
     
-   background-color:var(--rollercoaster-cart-primary-color);
+    linear-gradient(60deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(65deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
 
-   /* rotate: 180deg;
+    linear-gradient(70deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(75deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
 
-   animation: looping 2s linear infinite; */
- }
+    linear-gradient(80deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(85deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(90deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(95deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(100deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(105deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(110deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(115deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(120deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(125deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(130deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(135deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(140deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(145deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(150deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(155deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(160deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(165deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+
+    linear-gradient(170deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%),
+    linear-gradient(175deg, transparent 45% calc(50% - var(--waarde-1)), var(--line-colors) calc(50% - var(--waarde-2)) calc(50% + var(--waarde-1)), transparent calc(50% + var(--waarde-2)) 55%);
+}
+
+/* ******************************* */
+/* Rollercoaster inside of looping */
+/* ******************************* */
+ 
+main > figure header > div:nth-child(2) {
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 85%;
+  aspect-ratio: 1;
+}
+
+/* **** */
+/* Worm */
+/* **** */
+
+main > figure header div:nth-child(2) figure div {
+  height: 8vmin;
+  aspect-ratio: 0.5 / 2;
+
+  border-radius: 9999px;
+
+  --block-1-bg: red;
+  background-color: var(--block-1-bg);
+
+  /* rotate: 180deg; */
+
+  animation: falling 10s linear infinite;
+}
+
+/* ************************************ */
+/* Rollercoaster worm falling animation */
+/* ************************************ */
+
+:root {
+  --riding-size: 23vmin;
+  --falling-distance: 17vmin;
+}
 
 
- main > figure header div:nth-child(2) figure ul::before, main > figure header div:nth-child(2) figure ul::after {
-   --wiel-waarde-1: -1.5vmin;
-   --wiel-waarde-2: 2vmin;
-   
-   z-index: -1;
+@keyframes falling {
 
-   content: ' ';
-
-   position: absolute;
-
-   bottom: var(--wiel-waarde-1);
-
-   width: 4vmin;
-   aspect-ratio: 1;
-
-   border-radius: 50%;
-
-   background-color: var(--rollercoaster-cart-wheel-color);
- }
-
- main > figure header div:nth-child(2) figure ul::before {
-   left: var(--wiel-waarde-2);
- }
-
- main > figure header div:nth-child(2) figure ul::after {
-   right: var(--wiel-waarde-2);
- }
-
-
- /* Bumper */
- main > figure header div:nth-child(2) figure ul li:nth-child(1) {
-   position: absolute;
+  0% {
+    transform: rotate(0turn) translateY(var(--riding-size));
+  }
   
-   right: -1vmin;
-   bottom: 1vmin;
-   left: -1vmin;
-   
-   width: 20vmin;
-   height: 3vmin;
-   
-   border-radius: 99px;
-   
-   background-color: var(--rollercoaster-cart-accent-color);
- }
+  50% {
+    transform: rotate(.5turn) translateY(var(--riding-size));
+    background-color: red;
+  }
+  
+  80% {
+    transform: rotate(.8turn) translateY(var(--falling-distance));
+    background-color: green;
+  }
+  
+  100% {
+    transform: rotate(1turn) translateY(var(--riding-size));
+  }
 
+}
 
-/* Voorkant en Achterkant */
+/* ****************** */
+/* Rollercoaster cart */
+/* ****************** */
+
+main > figure header div:nth-child(2) figure {
+  position: absolute;
+}
+
+main > figure header div:nth-child(2) figure ul {
+  --rollercoaster-cart-width: 18vmin;
+  --rollercoaster-cart-height: calc(var(--rollercoaster-cart-width) / 3);
+
+  --rollercoaster-cart-border-radius: 0 0 8px 8px;
+
+  display: none; /* Tijdelijk */
+
+  list-style: none;
+
+  position: relative;
+
+  width: var(--rollercoaster-cart-width);
+  height: var(--rollercoaster-cart-height);
+
+  border-radius: var(--rollercoaster-cart-border-radius);
+
+  background-color:var(--rollercoaster-cart-primary-color);
+
+  /* rotate: 180deg; */
+
+  animation: looping 10s linear infinite;
+}
+
+/* ************************* */
+/* Rollercoaster cart wheels */
+/* ************************* */
+
+main > figure header div:nth-child(2) figure ul::before, main > figure header div:nth-child(2) figure ul::after {
+  --wiel-waarde-1: -1.5vmin;
+  --wiel-waarde-2: 2vmin;
+
+  z-index: -1;
+
+  content: ' ';
+
+  position: absolute;
+
+  bottom: var(--wiel-waarde-1);
+
+  width: 4vmin;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background-color: var(--rollercoaster-cart-wheel-color);
+}
+
+/* ********** */
+/* Left wheel */
+/* ********** */
+
+main > figure header div:nth-child(2) figure ul::before {
+  left: var(--wiel-waarde-2);
+}
+
+/* *********** */
+/* Right wheel */
+/* *********** */
+
+main > figure header div:nth-child(2) figure ul::after {
+  right: var(--wiel-waarde-2);
+}
+
+/* ****** */
+/* Bumper */
+/* ****** */
+
+main > figure header div:nth-child(2) figure ul li:nth-child(1) {
+  position: absolute;
+
+  right: -1vmin;
+  bottom: 1vmin;
+  left: -1vmin;
+  
+  width: 20vmin;
+  height: 3vmin;
+  
+  border-radius: 99px;
+  
+  background-color: var(--rollercoaster-cart-accent-color);
+}
+
+/* ******************** */
+/* Titel voor verzinnen */
+/* ******************** */
+
  main > figure header div:nth-child(2) figure ul li:nth-child(2), main > figure header div:nth-child(2) figure ul li:nth-child(3) {
    position: absolute;
   
@@ -355,49 +431,61 @@ body {
    background-color: var(--rollercoaster-cart-primary-color);
  }
 
+/* ********** */
+/* Front part */
+/* ********** */
 
- /* Voorkant */
- main > figure header div:nth-child(2) figure ul li:nth-child(2) {
-   left: 0;
- }
+main > figure header div:nth-child(2) figure ul li:nth-child(2) {
+  left: 0;
+}
 
- main > figure header div:nth-child(2) figure ul li:nth-child(2)::before {
-   content: ' ';
-   
-   position: absolute;
+/* **************** */
+/* Front part light */
+/* **************** */
 
-   bottom: 0;
-   left: 1.5vmin;
-
-   width: 1vmin;
-   height: 2vmin;
-
-   border-radius: 99px;
-
-   background-color: var(--rollercoaster-cart-detail-color);
- }
-
-
- /* Achterkant */
- main > figure header div:nth-child(2) figure ul li:nth-child(3) {
-   right: 0;
- }
-
- main > figure header div:nth-child(2) figure ul li:nth-child(3)::before {
-   content: ' ';
+main > figure header div:nth-child(2) figure ul li:nth-child(2)::before {
+  content: ' ';
   
-   position: absolute;
-   
-   left: 0.5vmin;
-   bottom: 0.25vmin;
-   
-   width: 3vmin;
-   height: 7vmin;
-   
-   border-radius: 99px;
-   
-   background-color: var(--rollercoaster-cart-primary-color);
- }
+  position: absolute;
+
+  bottom: 0;
+  left: 1.5vmin;
+
+  width: 1vmin;
+  height: 2vmin;
+
+  border-radius: 99px;
+
+  background-color: var(--rollercoaster-cart-detail-color);
+}
+
+/* ********* */
+/* Back part */
+/* ********* */
+
+main > figure header div:nth-child(2) figure ul li:nth-child(3) {
+  right: 0;
+}
+
+/* ************** */
+/* Back part seat */
+/* ************** */
+
+main > figure header div:nth-child(2) figure ul li:nth-child(3)::before {
+  content: ' ';
+
+  position: absolute;
+  
+  left: 0.5vmin;
+  bottom: 0.25vmin;
+  
+  width: 3vmin;
+  height: 7vmin;
+  
+  border-radius: 99px;
+  
+  background-color: var(--rollercoaster-cart-primary-color);
+}
 
 
 /* ************************************ */
@@ -406,11 +494,9 @@ body {
 
 @keyframes looping {
 	0%{
-		animation-timing-function:cubic-bezier(0.855, 0.050, 0.855, 0.060);
 		transform:rotate(0turn) translatey(25vmin) rotate(0turn);
 	}
 	50% {
-		animation-timing-function:cubic-bezier(0.230, 1.000, 0.320, 1.000);
 		transform:rotate(.5turn) translatey(25vmin) rotate(0turn);
 	}
 
@@ -419,73 +505,85 @@ body {
 	}
 }
 
+/* ****************** */
+/* Rollercoaster base */
+/* ****************** */
 
-
-
+/* To connect the looping and beams */
 main > figure footer {
    transform: translateY(-35vmin);
 }
 
+/* **************************** */
+/* Rollercoaster base container */
+/* **************************** */
+
 main > figure footer {
-   container-type: inline-size;
-   
-   position: relative;
+  container-type: inline-size;
+  
+  position: relative;
 
-   display: flex;
+  display: flex;
 
-   align-items: center;
-   justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-   width: 100%;
-   height: 45vmin;
+  width: 100%;
+  height: 45vmin;
 }
- 
- main > figure footer div {
-   width: 100%;
-   height: 100%;
 
-   --rollercoaster-looping-width: 65vmin; /* Figure width */ 
-   --mask-radius-ellipse: radial-gradient(circle var(--rollercoaster-looping-width) at 50% 5%, transparent 50%, red 50%);
+/* ************************ */
+/* Rollercoaster base beams */
+/* ************************ */
 
- 
-   -webkit-mask-image: var(--mask-radius-ellipse);
-   mask-image: var(--mask-radius-ellipse);
-   
-   --size-pillar: 1cqw;
-	--amount-pillar: 11;
-	--color-pillar: var(--rollercoaster-beams-color);
-	
-	--color-beams: var(--rollercoaster-beams-color);
-	--size-beams: .5cqw;
-	--height-beams: 95%;
+main > figure footer div {
+  --mask-radius-ellipse: radial-gradient(circle var(--rollercoaster-looping-width) at 50% 5%, transparent 50%, red 50%);
 
-   background-image:
-   
-      radial-gradient(circle at calc(var(--size-pillar) / 2) center, var(--color-pillar) 0 calc(var(--size-pillar) / 2), transparent 0),
-      repeating-linear-gradient(90deg, var(--color-pillar) 0 var(--size-pillar), transparent 0 calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1) )),
-      repeating-linear-gradient(45deg, var(--color-beams) 0 calc(var(--size-beams)), #ff00 calc(var(--size-beams)) calc( ((100cqw - var(--size-pillar)) / (var(--amount-pillar) - 1)) * .707107 )),
-      repeating-linear-gradient(-45deg, var(--color-beams) 0 calc(var(--size-beams)),#ff00 calc(var(--size-beams)) calc( ((100cqw - var(--size-pillar)) / (var(--amount-pillar) - 1)) * .707107 ));
-	
-	background-size:
-   
-      calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1)) var(--size-pillar), 100% calc( 100% - var(--size-pillar) / 2), 100% var(--height-beams), 100% var(--height-beams);
-	
-	background-repeat:		
-		repeat-x, 
-		no-repeat,
-		repeat-x, 
-		repeat-x;
-	
-	background-position:		
-		left bottom,
-		left top,
-		left top,
-		left top;
- }
+  --size-pillar: 1cqw;
+  --amount-pillar: 11;
+  --color-pillar: var(--rollercoaster-beams-color);
+  
+  --color-beams: var(--rollercoaster-beams-color);
+  --size-beams: .5cqw;
+  --height-beams: 95%;
 
 
+  width: 100%;
+  height: 100%;
+
+  -webkit-mask-image: var(--mask-radius-ellipse);
+  mask-image: var(--mask-radius-ellipse);
+  
+  background-image:
+  
+    radial-gradient(circle at calc(var(--size-pillar) / 2) center, var(--color-pillar) 0 calc(var(--size-pillar) / 2), transparent 0),
+    repeating-linear-gradient(90deg, var(--color-pillar) 0 var(--size-pillar), transparent 0 calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1) )),
+    repeating-linear-gradient(45deg, var(--color-beams) 0 calc(var(--size-beams)), #ff00 calc(var(--size-beams)) calc( ((100cqw - var(--size-pillar)) / (var(--amount-pillar) - 1)) * .707107 )),
+    repeating-linear-gradient(-45deg, var(--color-beams) 0 calc(var(--size-beams)),#ff00 calc(var(--size-beams)) calc( ((100cqw - var(--size-pillar)) / (var(--amount-pillar) - 1)) * .707107 ));
+
+  background-size:
+  
+    calc( (100% - var(--size-pillar)) / (var(--amount-pillar) - 1)) var(--size-pillar), 100% calc( 100% - var(--size-pillar) / 2), 100% var(--height-beams), 100% var(--height-beams);
+
+  background-repeat:		
+    repeat-x, 
+    no-repeat,
+    repeat-x, 
+    repeat-x;
+
+  background-position:		
+    left bottom,
+    left top,
+    left top,
+    left top;
+}
 
 
+
+
+/* ********************* */
+/* Themepark Environment */
+/* ********************* */
 
 main section {
   overflow: hidden;
@@ -496,14 +594,15 @@ main section {
   height: 100%;
 }
 
-
-main section figure {
+main section > figure {
   width: 100%;
   height: 100%;
 }
 
+/* ***************************** */
+/* Themepark rollercoaster rails */
+/* ***************************** */
 
-/* Rails */
 main > section:nth-child(2) {
   container-type: inline-size;
 
@@ -513,25 +612,29 @@ main > section:nth-child(2) {
 }
 
 main > section:nth-child(2) figure svg {
-
+  height: 100%;
+  width: 100%;
 }
 
 main > section:nth-child(2) figure svg path {
   fill: none;
   
   stroke: var(--environment-rollercoaster-track-color);
+
   stroke-width: 4;
   stroke-miterlimit: 16;
   stroke-linecap: butt;
 }
 
-/* Bergen */
+/* ******************* */
+/* Themepark mountains */
+/* ******************* */
+
 main > section:nth-child(3) {
   z-index: 90;
+
   background-color: var(--environment-mountains-color);
 }
-
-
 
 main section:nth-child(3) figure svg {
   fill: var(--environment-sky-color);
@@ -543,11 +646,14 @@ main section:nth-child(3) figure svg {
 
 
 
+/* ************* */
+/* Media Queries */
+/* ************* */
 
 
-
-
-
+/* ****** */
+/* Tablet */
+/* ****** */
 
 @media screen and (min-width: 360px) {
 
@@ -556,7 +662,6 @@ main section:nth-child(3) figure svg {
   }
 
 }
-
 
 @media screen and (min-height: 800px) {
 

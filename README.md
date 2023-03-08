@@ -46,7 +46,7 @@ $ Index.html
 <br>
 
 ## Diversen
-Volg Danian Marengo, <a href="www.danianmarengo.nl">Website</a>
+Volg Danian Marengo, <a href="https://www.danianmarengo.nl">Website</a>
 
 <br>
 

@@ -103,6 +103,14 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
    height: 100%;
  }
+
+ body:has(#achtbaan:checked) main > figure header div:nth-child(2) figure div{
+  animation-play-state: running;
+}
+
+body:has(#achtbaan:checked) main > figure header div:nth-child(2) figure ul{
+  animation-play-state: running;
+}
  
  
 /* ********* */
@@ -281,7 +289,8 @@ main > figure header div:nth-child(2) figure div {
 
   /* rotate: 180deg; */
 
-  animation: falling 10s linear infinite;
+  animation: falling 3s linear infinite;
+  animation-play-state: paused;
 }
 
 /* ************************************ */
@@ -347,7 +356,8 @@ main > figure header div:nth-child(2) figure ul {
 
   /* rotate: 180deg; */
 
-  animation: looping 10s linear infinite;
+  animation: looping 3s linear infinite;
+  animation-play-state: paused;
 }
 
 /* ************************* */
@@ -408,10 +418,6 @@ main > figure header div:nth-child(2) figure ul li:nth-child(1) {
   
   background-color: var(--rollercoaster-cart-accent-color);
 }
-
-/* ******************** */
-/* Titel voor verzinnen */
-/* ******************** */
 
  main > figure header div:nth-child(2) figure ul li:nth-child(2), main > figure header div:nth-child(2) figure ul li:nth-child(3) {
    position: absolute;
@@ -539,6 +545,8 @@ main > figure footer {
 /* ************************ */
 
 main > figure footer div {
+/* Met dank aan Sanne: https://codepen.io/marengd/pen/zYJKGPv */
+
   --mask-radius-ellipse: radial-gradient(circle var(--rollercoaster-looping-width) at 50% 5%, transparent 50%, red 50%);
 
   --size-pillar: 1cqw;
